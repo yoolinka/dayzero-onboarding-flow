@@ -1,3 +1,4 @@
+
 import { Routes, Route } from 'react-router-dom';
 import { BottomNav } from '../components/BottomNav';
 import { Home } from '../components/dashboard/Home';
@@ -5,9 +6,11 @@ import { CravingHelp } from '../components/dashboard/CravingHelp';
 import { Journal } from '../components/dashboard/Journal';
 import { Community } from '../components/dashboard/Community';
 import { Profile } from '../components/dashboard/Profile';
+
 const Dashboard = () => {
-  return <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <div className="flex-1 container mx-auto px-4 pb-16 rounded-none my-0 bg-slate-50">
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col dark">
+      <div className="flex-1 container mx-auto px-4 pb-16 rounded-none my-0">
         <Routes>
           <Route index element={<Home />} />
           <Route path="craving-help" element={<CravingHelp />} />
@@ -17,6 +20,8 @@ const Dashboard = () => {
         </Routes>
       </div>
       <BottomNav />
-    </div>;
+    </div>
+  );
 };
+
 export default Dashboard;
