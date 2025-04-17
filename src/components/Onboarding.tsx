@@ -1,4 +1,3 @@
-
 import { useOnboarding } from '../contexts/OnboardingContext';
 import { Button } from './ui/button';
 import { ProgressBar } from './ProgressBar';
@@ -13,6 +12,7 @@ import {
   Target,
   Heart
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Onboarding() {
   const { step, nextStep } = useOnboarding();
@@ -211,6 +211,11 @@ function MotivationSelection() {
 
 function Summary() {
   const { data } = useOnboarding();
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate('/dashboard');
+  };
 
   return (
     <Card className="p-8 space-y-6">
@@ -225,7 +230,9 @@ function Summary() {
         </p>
         <p className="font-medium text-primary">Your journey starts now.</p>
       </div>
-      <Button className="w-full">Start My DayZero</Button>
+      <Button onClick={handleStart} className="w-full">
+        Start My DayZero
+      </Button>
     </Card>
   );
 }
