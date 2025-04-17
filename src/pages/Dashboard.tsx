@@ -7,7 +7,7 @@ import { Community } from '../components/dashboard/Community';
 import { Profile } from '../components/dashboard/Profile';
 const Dashboard = () => {
   return <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <div className="flex-1 container mx-auto px-4 pb-16 rounded-none bg-gray-500 my-0">
+      <div className="flex-1 container mx-auto px-4 pb-16 rounded-none my-0 bg-slate-50">
         <Routes>
           <Route index element={<Home />} />
           <Route path="craving-help" element={<CravingHelp />} />
